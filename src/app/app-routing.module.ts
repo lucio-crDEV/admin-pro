@@ -13,7 +13,7 @@ const routes: Routes = [
   // path: '/auth'      -> AuthRounting
   // path: '/medicos'   -> MedicosRounting
   // path: '/compras'   -> ComprasRounting
-
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', component: NotpagefoundComponent },
 ];
 
