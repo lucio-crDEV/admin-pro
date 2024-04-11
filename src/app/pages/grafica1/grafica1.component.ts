@@ -20,7 +20,7 @@ export class Grafica1Component {
     {
       data: [20, 6, 40, 80],
       label: 'valor ',
-      backgroundColor: ['#6857E6', '#009FEE', '#F02059', '#FF00E2']
+      backgroundColor: ['#6857E6', '#009FEE', '#00AA99', '#F02059']
     }
   ];
 
