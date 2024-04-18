@@ -16,6 +16,7 @@ export class Grafica1Component {
 
   labels1: string[] = ['Pan', 'Refrescos', 'Arvejas', 'Zapallo'];
   labels2: string[] = ['K/D', 'ACS', '%hs', 'WinRate']
+  labels3: string[] = ['Duracion', 'Frecuencia', 'Participantes']
 
   data1: Data[] = [
     {
@@ -30,6 +31,13 @@ export class Grafica1Component {
       data: [1.48, 264.6, 24.4, 51.1],
       label: 'valor ',
       backgroundColor: ['#6857E6', '#009FEE', '#00AA99', '#F02059']
+    }
+  ];
+  data3: Data[] = [
+    {
+      data: [20, 6, 3],
+      label: 'valor ',
+      backgroundColor: ['#6857E6', '#009FEE', '#00AA99']
     }
   ];
 

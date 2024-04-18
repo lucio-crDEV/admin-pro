@@ -17,7 +17,7 @@ export class PromesasComponent implements OnInit {
     return new Promise( resolve => {
       fetch('https://reqres.in/api/users?page')
         .then( resp => resp.json() )
-        .then( body => resolve( body.data ))
+        .then( body => resolve( console.log(body.data) ))
     })
   }
 }

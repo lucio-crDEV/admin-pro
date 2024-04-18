@@ -10,7 +10,7 @@ export class SettingsService {
 
   constructor() { 
 
-    const url = localStorage.getItem('theme') || './assets/css/colors/default-dark.css';
+    const url = localStorage.getItem('theme') || './assets/css/colors/blue-dark.css';
     this.linkTheme!.setAttribute('href', url);
     localStorage.setItem('theme', url);
 

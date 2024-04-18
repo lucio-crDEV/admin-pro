@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SettingsService } from '../services/settings.service';
 
+// disponible en 'src/assets/js/custom.js'
 declare function customInitFunctions(): any;
 
 @Component({
