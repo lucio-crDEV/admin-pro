@@ -10,7 +10,7 @@ export class PromesasComponent implements OnInit {
   constructor() {  }
 
   ngOnInit(): void {
-    this.getUsuarios().then( usuarios => console.log(usuarios) )
+    this.getUsuarios().then()
   }
 
   getUsuarios(){
