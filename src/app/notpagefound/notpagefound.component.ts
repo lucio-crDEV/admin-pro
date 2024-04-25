@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { SettingsService } from '../services/settings.service';
+
 @Component({
   selector: 'app-notpagefound',
   templateUrl: './notpagefound.component.html',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NotpagefoundComponent {
 
-  year = new Date().getFullYear();
+  year: number = this.settingService.getCurrentYear();
+
+  constructor( private settingService : SettingsService ) { };
 
 }
