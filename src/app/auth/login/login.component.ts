@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, NgZone, ViewChild } from '@angula
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 import { UsuarioService } from '../../services/usuario.service';
 

@@ -1,7 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
@@ -21,7 +21,7 @@ export class RegisterComponent {
     email:     ['', [Validators.required, Validators.email ] ],
     password:  ['', Validators.required ],
     password2: ['', Validators.required ],
-    terminos:  [ false, Validators.required ],
+    terminos:  [ false, Validators.requiredTrue ],
     }, {
       validators: [ validarPassword ],
     }
