@@ -90,31 +90,27 @@ export class PerfilComponent implements OnInit {
     this.fileUploadService
       .actualizarFoto(this.imagenSubir, 'usuarios', this.usuario.uid! )
       .then( ( img ) => { 
-
-        // si retorna true
-        if( img === true ){
-          this.usuario.img = img;
-          
+        
+        // si no hay imagen
+        if( !img ){
           Swal.fire({
-            title: 'Guardado',
-            text: 'La imagen fue modificada',
-            icon: 'success',
+            title: 'Error',
+            text: 'No es una extensión de archivo permitida',
+            icon: 'error',
             timerProgressBar: true,
             showConfirmButton: false,
-            timer: 2000
+            timer: 3000
           })
         }
-
-        // si retorna false
+          
         Swal.fire({
-          title: 'Error',
-          text: 'No es una extensión de archivo permitida',
-          icon: 'error',
+          title: 'Guardado',
+          text: 'La imagen fue modificada',
+          icon: 'success',
           timerProgressBar: true,
           showConfirmButton: false,
-          timer: 3000
+          timer: 2000
         })
-        
       });
 
   };
