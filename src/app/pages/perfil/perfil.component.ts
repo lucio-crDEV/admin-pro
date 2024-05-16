@@ -102,7 +102,8 @@ export class PerfilComponent implements OnInit {
             timer: 3000
           })
         }
-          
+        // actualizar imagen 
+        this.usuario.img = img
         Swal.fire({
           title: 'Guardado',
           text: 'La imagen fue modificada',

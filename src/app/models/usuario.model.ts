@@ -19,15 +19,13 @@ export class Usuario {
     const img = this.img || ''
 
     // retorna imagen si es cargada con google y comienza con HTTPS
-    if (img.includes( 'https' )) {
+    if ( img.includes('https') ) {
       return this.img;
-    };
-
+    } else if ( this.img ) {
     // returna la imagen default si no existe, o la cargada por el usuario
-    if ( this.img ) {
-      return `${ base_url }/uploads/usuarios/${ this.img }`
+      return `${ base_url }/uploads/usuarios/${ this.img }`;
     } else {
-      return `${ base_url }/uploads/usuarios/no-image`
+      return `${ base_url }/uploads/usuarios/no-image`;
     };
   }
 };
