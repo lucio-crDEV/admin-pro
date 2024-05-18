@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+#plantilla provisoria
+/src/app/pages/mantenimientos/carcaron.txt
