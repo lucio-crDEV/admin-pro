@@ -49,32 +49,36 @@ export class ModalImagenComponent {
     this.fileUploadService
       .actualizarFoto(this.imagenSubir, tipo, id )
       .then( ( img ) => { 
-        
         // si no hay imagen
-        if( !img ){
+      if( img.ok === false ){
           Swal.fire({
             title: 'Error',
-            text: 'No es una extensión de archivo permitida',
+            text: img.msg,
             icon: 'error',
             timerProgressBar: true,
             showConfirmButton: false,
             timer: 3000
           })
           this.cerrarModal();
+        } else if (img){
+          // actualizar imagen 
+          // this.usuario.img = img
+          this.modalImagenService.nuevaImagen.emit( img );
+          this.cerrarModal();
+          Swal.fire({
+            title: 'Guardado',
+            text: 'La imagen fue modificada',
+            icon: 'success',
+            timerProgressBar: true,
+            showConfirmButton: false,
+            timer: 2000
+          })
         }
-        // actualizar imagen 
-        // this.usuario.img = img
-        this.modalImagenService.nuevaImagen.emit( img );
-        this.cerrarModal();
-        Swal.fire({
-          title: 'Guardado',
-          text: 'La imagen fue modificada',
-          icon: 'success',
-          timerProgressBar: true,
-          showConfirmButton: false,
-          timer: 2000
-        })
-      });
+      }).catch(
+        (err)=>{
+          console.log('Nuevo error', err)
+        }
+      )
 
   };
 

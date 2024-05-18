@@ -34,8 +34,7 @@ export class FileUploadService {
       if( data.ok ){
         return data.nombreArchivo;
       } else{
-        console.log(data.msg);        
-        return false;
+        return {...data};
       };
 
     } catch (error) {

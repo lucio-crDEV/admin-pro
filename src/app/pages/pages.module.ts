@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Módulos
 import { ComponentsModule } from '../components/components.module';
 import { SharedModule } from '../shared/shared.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 // Componentes
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -50,7 +51,8 @@ import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
     FormsModule,
     ComponentsModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ]
 })
 

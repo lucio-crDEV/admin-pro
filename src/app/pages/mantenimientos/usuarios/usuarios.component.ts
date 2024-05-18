@@ -97,6 +97,7 @@ export class UsuariosComponent implements OnInit, OnDestroy{
       confirmButtonColor: "#198754",
       cancelButtonColor: "#dc3545",
       confirmButtonText: "Si, borrarlo!",
+      cancelButtonText: "Cancelar",
       focusCancel: true
     }).then((result) => {
       if (result.isConfirmed) {
