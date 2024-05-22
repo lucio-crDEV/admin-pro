@@ -10,7 +10,7 @@
     <div *ngIf=" titulo === 'Ajustes de Cuenta'" class="col-md-7 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="javascript:void(0)">Home</a>
+                <a routerLink="/dashboard">Home</a>
             </li>
             <li class="breadcrumb-item active">{{ titulo }}</li>
         </ol>
@@ -19,20 +19,31 @@
     <!-- dashboard/Main -->
     <div *ngIf=" titulo === 'Main'" class="col-md-7 align-self-center">
         <ol class="breadcrumb">
+            <li class="breadcrumb-item">Dashboard</li>
+            <li class="breadcrumb-item">{{ titulo }}</li>
+        </ol>
+    </div>
+
+    <!-- dashboard/Main -->
+    <div *ngIf=" titulo === 'Mantenimiento de Médico'" class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="javascript:void(0)">Dashboard</a>
+                <a routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a routerLink="/dashboard/medicos">Médicos</a>
             </li>
             <li class="breadcrumb-item">{{ titulo }}</li>
         </ol>
     </div>
 
     <!-- dashboad/pageName -->
-    <div *ngIf="titulo !== 'Ajustes de Cuenta' && titulo !== 'Main'" class="col-md-7 align-self-center">
+    <div *ngIf="titulo !== 'Ajustes de Cuenta' && titulo !== 'Main' && titulo !== 'Mantenimiento de Médico'" class="col-md-7 align-self-center">
         <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
             <li class="breadcrumb-item">
-                <a href="javascript:void(0)">Home</a>
+                <a routerLink="/dashboard">Dashboard</a>
             </li>
-            <li class="breadcrumb-item">Dashboard</li>
             <li class="breadcrumb-item active">{{ titulo }}</li>
         </ol>
     </div>    

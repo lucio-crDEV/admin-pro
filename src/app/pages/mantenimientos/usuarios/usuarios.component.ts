@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
@@ -7,7 +8,6 @@ import { Usuario } from '../../../models/usuario.model';
 import { BusquedasService } from '../../../services/busquedas.service';
 import { ModalImagenService } from '../../../services/modal-imagen.service';
 import { UsuarioService } from '../../../services/usuario.service';
-import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -68,16 +68,15 @@ export class UsuariosComponent implements OnInit, OnDestroy{
     this.cargarUsuarios();
   };
 
-  buscar( termino:string  ){
+  buscar( termino:string  ): Usuario[] {
 
     if( termino.length === 0){
       return this.usuarios = this.usuariosTemp;
     }
     
     this.busquedaService.buscar( 'usuarios', termino )
-      .subscribe( (resultados ) => {
-        
-        this.usuarios = resultados;
+      .subscribe( (resultados) => {
+        this.usuarios = resultados as Usuario[];
       })
 
     return this.usuarios
@@ -114,9 +113,7 @@ export class UsuariosComponent implements OnInit, OnDestroy{
   cambiarRole( usuario: Usuario ){
     
     this.usuarioService.guardarUsuario( usuario )
-      .subscribe( resp => {
-        console.log(resp);
-      })
+      .subscribe()
 
   }
 

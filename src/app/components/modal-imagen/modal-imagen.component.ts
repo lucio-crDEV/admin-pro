@@ -76,7 +76,7 @@ export class ModalImagenComponent {
         }
       }).catch(
         (err)=>{
-          console.log('Nuevo error', err)
+          console.log('Nuevo error:', err)
         }
       )
 

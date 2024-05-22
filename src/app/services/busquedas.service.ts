@@ -3,7 +3,11 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment.development';
+
+//modelos
 import { Usuario } from '../models/usuario.model';
+import { Medico } from '../models/medico.model';
+import { Hospital } from '../models/hospital.model';
 
 const base_url = environment.base_url;
 
@@ -11,6 +15,8 @@ const base_url = environment.base_url;
   providedIn: 'root'
 })
 export class BusquedasService {
+
+  private resultado : [] = [];
 
   get token(): string {
     return localStorage.getItem('token') || '';
@@ -26,10 +32,21 @@ export class BusquedasService {
 
   constructor( private http: HttpClient) { };
 
-  private transformarUsurios( resultados: any[] ): Usuario[] {
-
+  private transformarUsuarios( resultados: Usuario[] ): Usuario[] {
     return resultados.map(
       user => new Usuario(user.nombre, user.email, '',user.role, user.google, user.img, user.uid) 
+    );
+  }
+  private transformarHospitales( resultados: Hospital[] ): Hospital[] {
+    return resultados.map(
+      hospital => new Hospital(hospital.nombre, hospital._id, hospital.img, hospital.usuario ) 
+    );
+  }
+
+  // TODO definir modelo
+  private transformarMedicos( resultados: Medico[] ): Medico[] {
+    return resultados.map(
+      medico => new Medico(medico.nombre, medico._id, medico.img, medico.usuario, medico.hospital) 
     );
   }
 
@@ -45,8 +62,13 @@ export class BusquedasService {
 
           switch (tipo) {
             case 'usuarios':
-              return this.transformarUsurios( resp.resultados )
-              break;
+              return this.transformarUsuarios( resp.resultados )
+
+            case 'hospitales':
+              return this.transformarHospitales( resp.resultados )
+
+            case 'medicos':
+              return this.transformarMedicos( resp.resultados )
           
             default:
               return[];

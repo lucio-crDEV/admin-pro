@@ -46,8 +46,6 @@ export class RegisterComponent {
     this.usuarioService.crearUsuario( this.registerForm.value )
       .subscribe({
         next: resp => {
-          console.log('Usuario Creado');
-          console.log(resp);
           this.goDashboard()
         },
         error: err => {
