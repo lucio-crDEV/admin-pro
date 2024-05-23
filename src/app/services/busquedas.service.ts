@@ -43,13 +43,17 @@ export class BusquedasService {
     );
   }
 
-  // TODO definir modelo
   private transformarMedicos( resultados: Medico[] ): Medico[] {
     return resultados.map(
       medico => new Medico(medico.nombre, medico._id, medico.img, medico.usuario, medico.hospital) 
     );
   }
 
+  busquedaGlobal( termino: string ) {
+    const url = `${ base_url }/todo/${ termino }`
+    return this.http.get( url, this.headers);
+
+  }
 
   buscar( 
     tipo: 'usuarios'|'medicos'|'hospitales',
