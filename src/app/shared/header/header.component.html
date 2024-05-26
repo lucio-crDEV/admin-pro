@@ -202,8 +202,8 @@
                 <!-- Profile -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><img [src]="usuario.imagenUrl" alt="user"
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><img [src]="usuario.img | imagen: 'usuarios'" alt="user"
                             class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right animated fadeIn fast">
                         <ul class="dropdown-user">
@@ -214,7 +214,7 @@
                                         <h4>{{ usuario.nombre | slice:0:17 | titlecase}}{{ usuario.nombre.length > 17 ? '...' : '' }}</h4>
                                         <p class="text-muted">
                                             {{ usuario.email | slice:0:20 }}{{ usuario.email.length > 20 ? '...' : '' }}
-                                        </p><a href="pages-profile.html"
+                                        </p><a routerLink="./perfil"
                                             class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                                     </div>
                                 </div>

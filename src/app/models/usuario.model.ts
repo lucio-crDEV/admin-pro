@@ -8,7 +8,7 @@ export class Usuario {
     public nombre: string,
     public email: string,
     public password?: string,
-    public role?: string,
+    public role?: 'ADMIN_ROLE' | 'USER_ROLE',
     public google?: boolean,
     public img?: string,
     public uid?: string,
@@ -22,7 +22,7 @@ export class Usuario {
     if ( img.includes('https') ) {
       return this.img;
     } else if ( this.img ) {
-    // returna la imagen default si no existe, o la cargada por el usuario
+    // retorna la imagen default si no existe, o la cargada por el usuario
       return `${ base_url }/uploads/usuarios/${ this.img }`;
     } else {
       return `${ base_url }/uploads/usuarios/no-image`;
