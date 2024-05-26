@@ -58,3 +58,13 @@ Login register and recover password Page
     position: absolute;
     height: 100%;
 }
+
+@media (max-width: 767px) {
+
+    .login-sidebar .login-box {
+        right: 0px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
