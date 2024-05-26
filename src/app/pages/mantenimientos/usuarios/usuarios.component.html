@@ -90,7 +90,7 @@
 
                     </table>
                 </div>
-                <div *ngIf="txtTermino.value.length === 0"  class="d-flex justify-content-around">
+                <div *ngIf="txtTermino.value.length === 0"  class="d-flex justify-content-around text-center">
                     <button (click)="cambiarPagina(-5)" type="button" class="btn btn-outline-secondary" [disabled]="desde === 0">Anteriores</button>
                     &nbsp;
                     <button (click)="cambiarPagina(5)" type="button" class="btn btn-outline-secondary" [disabled]="desde >= totalUsuarios - 5">Siguientes</button>

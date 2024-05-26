@@ -102,6 +102,21 @@ export class RegisterComponent {
     return !this.registerForm.get('terminos')!.value && this.formSubmitted;
   };
 
+  showTerms(e: any){
+    e.preventDefault()
+    Swal.fire({
+      title: 'No Encontrado',
+      text: 'Aún no existe este apartado, solo marca el check',
+      icon:'warning',
+      showConfirmButton: false,
+      showCancelButton: true,
+      cancelButtonColor: '#d33',
+      focusCancel: true,
+      timer: 3000,
+      timerProgressBar: true
+    })
+  }
+
   goDashboard(){
     this.ngZone.run(()=>this.router.navigateByUrl('/'))
   }
